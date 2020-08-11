@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 class Form extends Component {
   constructor(props) {
@@ -20,14 +20,26 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
+        <div className="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input
+            className="mdl-textfield__input"
+            type="text"
+            id="todo_title"
+            onChange={this.handleChange}
+          ></input>
+          <label className="mdl-textfield__label" htmlFor="todo_title">
+            Title
+          </label>
+        </div>
+
+        {/* <label>
           Todo Title:
           <input type="text" name="title" onChange={this.handleChange} />
-        </label>
+        </label> */}
         <input type="submit" value="Submit" />
       </form>
-    );
+    )
   }
 }
 
-export default Form;
+export default Form
