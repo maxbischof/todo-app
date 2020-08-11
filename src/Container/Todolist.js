@@ -1,18 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Todo from '../Components/Todo'
+import { v4 as uuidv4 } from 'uuid'
 
-class Todolist extends Component {
-  state = {
-    todos: [
-      {title: "Eis kaufen", description: "ganz wichtig!"},
-      {title: "Neue Fische Hausaufgaben", description: "React Intro"}
-    ]
-  }
+const Todolist = (props) => {
 
-  render () {
     const todos = []
-    this.state.todos.forEach((todo) => {
-      todos.push(<Todo title={todo.title} description={todo.description}/>)
+    props.todos.forEach((todo) => {
+      todos.push(<Todo key={uuidv4()} title={todo.title} description={todo.description}/>)
     })
  
     return (
@@ -20,7 +14,7 @@ class Todolist extends Component {
         {todos}
       </section>
     )
-  }
+  
 }
 
 export default Todolist
