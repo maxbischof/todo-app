@@ -16,12 +16,16 @@ class App extends Component {
       todos: [...this.state.todos, {title, description, done}]
   })}
 
+  // setDone = (index) => {
+
+  // }
+
   render() {
     return (
       <div className="App">
         <h1>Todo's App</h1>
         <Form add={this.addTodo}/>
-        <Todolist todos={this.state.todos}/>
+        <Todolist todos={this.state.todos} />
       </div>
     )
   }
