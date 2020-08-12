@@ -29,3 +29,11 @@
   padding: 0;
   margin: 15px 0px 0px 10px;
 }
+
+.todo_delete {
+  grid-column: 2/3;
+  color: #e63946;
+  font-size: 10px;
+  padding: 0px 0px 15px 15px;
+  text-align: right;
+}

@@ -14,11 +14,23 @@ function App () {
     setTodos([...todos, {title, description, done}]
   )}
 
+  const deleteTodo = (index) => {
+    const newTodos = [...todos]
+    newTodos.splice(index,1)
+    setTodos([...newTodos])
+  }
+
+  const changeDone = (index) => {
+    const newTodos = [...todos]
+    newTodos[index].done = !newTodos[index].done
+    setTodos([...newTodos])
+  }
+
     return (
       <div className="App">
         <h1>Todo's App</h1>
         <Form add={addTodo}/>
-        <Todolist todos={todos} />
+        <Todolist todos={todos} deleteTodo={deleteTodo} changeDone={changeDone}/>
       </div>
     )
 }
