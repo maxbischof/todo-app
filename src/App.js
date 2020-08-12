@@ -7,17 +7,14 @@ class App extends Component {
   state = {
     todos: [
       {title: "Eis kaufen", description: "ganz wichtig!", done: false},
-      {title: "Neue Fische Hausaufgaben", description: "React Intro", done: false}
+      {title: "Neue Fische Hausaufgaben", description: "React Intro", done: true}
     ]
   }
 
-  addTodo = ({title, description}) => {
-    this.setState(state => {
-      const todosArray = state.todos.concat({title})
-      return (todosArray)
-    })
-    this.state.todos.push({title: title, description, done: false})
-  }
+  addTodo = ({title, description, done}) => {
+    this.setState({
+      todos: [...this.state.todos, {title, description, done}]
+  })}
 
   render() {
     return (
