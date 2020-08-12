@@ -4,18 +4,27 @@ import "./Form.css"
 class Form extends Component {
   constructor(props) {
     super(props)
-    this.state = { value: "" }
-    this.handleChange = this.handleChange.bind(this)
+    this.state = { title: "", description: "" }
+    this.handleTitleChange = this.handleTitleChange.bind(this)
+    this.handleDescriptionChange = this.handleDescriptionChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
   handleSubmit(event) {
-    this.props.add({ title: this.state.value })
+    this.props.add({
+      title: this.state.title,
+      description: this.state.description,
+      done: false,
+    })
     event.preventDefault()
   }
 
-  handleChange(event) {
-    this.setState({ value: event.target.value })
+  handleTitleChange(event) {
+    this.setState({ title: event.target.value })
+  }
+
+  handleDescriptionChange(event) {
+    this.setState({ description: event.target.value })
   }
 
   render() {
@@ -27,7 +36,7 @@ class Form extends Component {
             id="title"
             type="text"
             name="title"
-            onChange={this.handleChange}
+            onChange={this.handleTitleChange}
             className="form_input_field"
           />
         </div>
@@ -38,7 +47,7 @@ class Form extends Component {
             id="description"
             type="text"
             name="description"
-            onChange={this.handleChange}
+            onChange={this.handleDescriptionChange}
             className="form_input_field"
           />
         </div>
