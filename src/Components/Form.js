@@ -7,6 +7,7 @@ function Form({ add }) {
 
   function handleSubmit(event) {
     add({ title: title, description: description, done: false })
+    event.preventDefault()
   }
 
   function handleTitleChange(event) {
