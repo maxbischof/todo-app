@@ -8,6 +8,10 @@
   padding: 0px 10px 0px 10px;
 }
 
+.todo.todo-done {
+  color: #9e9e9e;
+}
+
 .todo_title {
   padding: 15px 0px 0px 15px;
   margin: 0;

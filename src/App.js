@@ -6,8 +6,8 @@ import Form from './Components/Form'
 class App extends Component {
   state = {
     todos: [
-      {title: "Eis kaufen", description: "ganz wichtig!"},
-      {title: "Neue Fische Hausaufgaben", description: "React Intro"}
+      {title: "Eis kaufen", description: "ganz wichtig!", done: false},
+      {title: "Neue Fische Hausaufgaben", description: "React Intro", done: false}
     ]
   }
 
@@ -16,7 +16,7 @@ class App extends Component {
       const todosArray = state.todos.concat({title})
       return (todosArray)
     })
-    this.state.todos.push({title: title, description})
+    this.state.todos.push({title: title, description, done: false})
   }
 
   render() {
