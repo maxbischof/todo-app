@@ -20,6 +20,7 @@ function Form({ add }) {
 
   return (
     <form onSubmit={handleSubmit} className="form">
+      <h3>Add new todo</h3>
       <div className="form_input">
         <label htmlFor="title">Title</label>
         <input

@@ -2,4 +2,21 @@
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: #1d3557;
+}
+
+h1{
+  color: white;
+  font-size: 20px;
+}
+
+header{
+  width: 80%;
+  margin: 0 0 10px 0;
+}
+
+hr{
+  color: gainsboro;
+  margin: 0 0 10px 0;
+  
 }

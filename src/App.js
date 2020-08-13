@@ -28,7 +28,10 @@ function App () {
 
     return (
       <div className="App">
-        <h1>Todo's App</h1>
+        <header>
+          <h1>Todo's App</h1>
+          <hr />
+        </header>
         <Form add={addTodo}/>
         <Todolist todos={todos} deleteTodo={deleteTodo} changeDone={changeDone}/>
       </div>
