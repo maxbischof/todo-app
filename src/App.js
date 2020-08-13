@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './App.css'
 import Todolist from './Container/Todolist'
 import Form from './Components/Form'
+import styled from 'styled-components'
 
 function App () {
   const startTodos = [
@@ -27,15 +27,35 @@ function App () {
   }
 
     return (
-      <div className="App">
-        <header>
-          <h1>Todo's App</h1>
-          <hr />
-        </header>
+      <Div>
+        <Header>
+          <Headline>Todo's App</Headline>
+          <Line />
+        </Header>
         <Form add={addTodo}/>
         <Todolist todos={todos} deleteTodo={deleteTodo} changeDone={changeDone}/>
-      </div>
+      </Div>
     )
 }
 
 export default App
+
+const Div = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #1d3557;`
+
+const Headline = styled.h1`
+  color: white;
+  font-size: 20px;`
+
+const Header = styled.header`
+  width: 80%;
+  margin: 0 0 10px 0;`
+
+
+
+const Line = styled.hr`
+  color: gainsboro;
+  margin: 0 0 10px 0;`
