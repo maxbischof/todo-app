@@ -2,7 +2,21 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Todo = ({ title, description, done, deleteTodo, index, changeDone }) => {
-  const Article = styled.article`
+  return <Article done={done}>
+      <Checkbox
+        type="checkbox"
+        defaultChecked={done}
+        onChange={() => changeDone(index)}
+      />
+      <Title className="todo_title">{title}</Title>
+      <Description className="todo_description">{description}</Description>
+      <DeleteAction className="todo_delete" onClick={() => deleteTodo(index)}>
+        Delete
+      </DeleteAction>
+    </Article>
+}
+
+const Article = styled.article`
     display: grid;
     grid-template-columns: 40px 1fr;
     grid-template-rows: 1fr 1fr;
@@ -12,7 +26,7 @@ const Todo = ({ title, description, done, deleteTodo, index, changeDone }) => {
       0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
     padding: 0px 10px 0px 10px;
     border-radius: 10px;
-    ${done ? 'color: #9e9e9e;' : ''}
+    ${props => props.done ? 'color: #9e9e9e;' : ''}
   `
 
   const Checkbox = styled.input`
@@ -41,21 +55,5 @@ const Todo = ({ title, description, done, deleteTodo, index, changeDone }) => {
     cursor: pointer;
     padding: 0px 0px 5px 15px;
   `
-
-  return (
-    <Article>
-      <Checkbox
-        type="checkbox"
-        defaultChecked={done}
-        onChange={() => changeDone(index)}
-      />
-      <Title className="todo_title">{title}</Title>
-      <Description className="todo_description">{description}</Description>
-      <DeleteAction className="todo_delete" onClick={() => deleteTodo(index)}>
-        Delete
-      </DeleteAction>
-    </Article>
-  )
-}
 
 export default Todo
