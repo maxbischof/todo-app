@@ -8,9 +8,9 @@ const Todo = ({ title, description, done, deleteTodo, index, changeDone }) => {
         defaultChecked={done}
         onChange={() => changeDone(index)}
       />
-      <Title className="todo_title">{title}</Title>
-      <Description className="todo_description">{description}</Description>
-      <DeleteAction className="todo_delete" onClick={() => deleteTodo(index)}>
+      <Title>{title}</Title>
+      <Description>{description}</Description>
+      <DeleteAction onClick={() => deleteTodo(index)}>
         Delete
       </DeleteAction>
     </Article>
