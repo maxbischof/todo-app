@@ -15,8 +15,8 @@ test('Sorts undone todos on top of list', () => {
     <Todolist todos={todos}/>
   )
 
-  const exampleInput = screen.getAllByText(/Eis kaufen/i)
+  const renderedTodos = screen.getAllByText(/Eis kaufen/i)
 
-  expect(exampleInput[0].textContent).toBe('Eis kaufen2')
-  expect(exampleInput[1].textContent).toBe('Eis kaufen4')
+  expect(renderedTodos[0].textContent).toBe('Eis kaufen2')
+  expect(renderedTodos[1].textContent).toBe('Eis kaufen4')
 })
