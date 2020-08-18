@@ -3,7 +3,8 @@ import Todo from "../Components/Todo"
 import styled from 'styled-components'
 
 const Todolist = ({ todos, deleteTodo, changeDone }) => {
-  const sortedTodos = todos.sort((a,b) => a.done - b.done)
+  const sortedTodos = todos.slice().sort((a,b) => a.done - b.done)
+  
   return <List>
     {sortedTodos.map((todo, index) => 
     <Todo

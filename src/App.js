@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Todolist from './Container/Todolist'
 import Form from './Components/Form'
 import styled from 'styled-components'
+import produce from 'immer'
 
 function App () {
   const startTodos = [
@@ -14,17 +15,17 @@ function App () {
     setTodos([...todos, {title, description, done}]
   )}
 
-  const deleteTodo = (index) => {
-    const newTodos = [...todos]
-    newTodos.splice(index,1)
-    setTodos([...newTodos])
-  }
+  const deleteTodo = (index) => setTodos(
+    produce(todos, nextTodos => {
+      nextTodos.splice(index,1)
+    })
+  )
 
-  const changeDone = (index) => {
-    const newTodos = [...todos]
-    newTodos[index].done = !newTodos[index].done
-    setTodos([...newTodos])
-  }
+  const changeDone = (index) => setTodos(
+    produce(todos, nextTodos => {
+      nextTodos[index].done = !nextTodos[index].done
+    })
+  )
 
     return (
       <Div>
